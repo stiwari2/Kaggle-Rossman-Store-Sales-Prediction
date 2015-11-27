@@ -1,5 +1,6 @@
-## Running various models such as Random forest, GBM. Kaggle rank 730
+## Modelling and Forecasting 
 ```{r}
+############################################# Data Visualization ####################################################
 #Trend plot
 agg <- aggregate(train[Sales != 0]$Sales, by = list(train[Sales!=0]$month,train[Sales!=0]$year), FUN=sum)
 SalesTS <- ts(agg$x, start=2013, frequency=12)
@@ -44,6 +45,7 @@ ggplot(train[Sales != 0], aes(x = factor(DayOfWeek), y = Sales)) +
     geom_jitter(alpha = 0.1) +
     geom_boxplot(color = "blue", outlier.colour = NA, fill = NA)
 
+############################################### Building Models ####################################################
 # Analyzing store data
 head(store)
 table(store$StoreType)
@@ -142,3 +144,4 @@ submission3$ensemble = (pred1 + pred2)/2
 cat("saving the submission file\n")
 write.csv(submission3, "ensembele.csv")
 ```
+### Kaggle rank 730
