@@ -1,4 +1,4 @@
-```
+```{r}
 ##################################### The following fields are available ################################################
 Store / Store Type / Assortment
 Day of the week / Date
